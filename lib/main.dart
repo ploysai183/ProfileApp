@@ -7,24 +7,22 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-  
-        colorScheme: ColorScheme.fromSeed(seedColor: Color.fromARGB(255, 27, 173, 218)),
+        colorScheme:
+            ColorScheme.fromSeed(seedColor: Color.fromARGB(255, 27, 173, 218)),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Phiyada Yimchungnang'),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
-
 
   final String title;
 
@@ -33,46 +31,75 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-          _counter++;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
-    
     return Scaffold(
       appBar: AppBar(
-      
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-       
         title: Text(widget.title),
       ),
-      body: Center(
-      
+      body: SingleChildScrollView(
         child: Column(
-        
-      
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            Image.asset("images/Profile.jpg"),
             const Text(
-              'You have pushed the button this many times:',
+              '',
+              style: TextStyle(
+                fontSize: 32,
+              ),
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
+            // แนวนอน
+            Row(
+              // ใส่ของ
+              children: [
+                SizedBox(width: 20,),
+                ClipOval(
+                  child: Image.asset(
+                    "images/Facebook.jpg",
+                    width: 50,
+                    height: 50,
+                  ),
+                ),
+                SizedBox(width: 20,),
+                 Text("Phiyada"),
+              ],
+            ),
+            SizedBox(height: 20,),
+             Row(
+              // ใส่ของ
+              children: [
+                SizedBox(width: 20,),
+                ClipOval(
+                  child: Image.asset(
+                    "images/LINE.png",
+                    width: 50,
+                    height: 50,
+                  ),
+                ),
+                SizedBox(width: 20,),
+                Text("PL OY"),
+              ],
+            ),
+             SizedBox(height: 20,),
+             Row(
+              // ใส่ของ
+              children: [
+                SizedBox(width: 20,),
+                ClipOval(
+                  child: Image.asset(
+                    "images/phone.jpg",
+                    width: 50,
+                    height: 50,
+                  ),
+                ),
+                SizedBox(width: 20,),
+                Text("0616584776"),
+              ],
             ),
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }

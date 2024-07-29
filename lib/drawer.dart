@@ -1,6 +1,6 @@
-
-Phiyada Yimchungnang
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:myapp/gridview.dart';
 
 class MyDrawer extends StatefulWidget {
   const MyDrawer({super.key});
@@ -22,7 +22,7 @@ class _MyDrawerState extends State<MyDrawer> {
         children: [
           const DrawerHeader(
             decoration: BoxDecoration(
-              color: Color.fromARGB(255, 33, 226, 243),
+              color: Colors.blue,
             ),
             child: Text('Drawer Header'),
           ),
@@ -34,10 +34,9 @@ class _MyDrawerState extends State<MyDrawer> {
             },
           ),
           ListTile(
-            title: const Text('Item 2'),
+            title: const Text('Grid View'),
             onTap: () {
-              // Update the state of the app.
-              // ...
+              Get.to(const GridPage());
             },
           ),
         ],

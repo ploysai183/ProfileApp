@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/drawer.dart';
+import 'package:get/get.dart';
 
 void main() {
   runApp(const MyApp());
@@ -9,7 +11,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme:
@@ -17,6 +19,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: const MyHomePage(title: 'Phiyada Yimchungnang'),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
@@ -38,6 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
+      drawer: const MyDrawer(),
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
